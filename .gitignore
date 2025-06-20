@@ -1,0 +1,30 @@
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+
+# Environnements virtuels
+venv/
+env/
+.pyenv/
+.venv/
+
+# Fichiers de logs
+*.log
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Config IDE
+.vscode/
+.idea/
+
+
+data/
+data (old)/
+docu image/
+images/
+models/
+pyenv/
+oneImageTest.py
+test.py/
