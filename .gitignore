@@ -27,4 +27,5 @@ images/
 models/
 pyenv/
 oneImageTest.py
-test.py/
+copyimages.py
+test.py

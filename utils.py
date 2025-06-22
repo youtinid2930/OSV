@@ -30,7 +30,7 @@ def imagePreprocess (imagePath, targetSize=(64, 64)):
     # 4- Normalisation (valeur entre 0 et 1)
     normalized = resized.astype("float32") / 255.0
 
-    processed_image = normalized.reshape(1, targetSize[1], targetSize[0], 1)
+    processed_image = normalized.reshape(targetSize[1], targetSize[0], 1)
 
     return processed_image
 
@@ -133,7 +133,7 @@ def loadData(directoryPath, targetSize=(64, 64)):
 #     return X, y        
 
 
-def augment_image(image):
+def augment_image(image_np):
     """
     Augmentation de jeu d'entrainement pour un image
 
@@ -142,6 +142,10 @@ def augment_image(image):
     retour:
          image : iamge augmenter
     """
+    image = tf.convert_to_tensor(image_np, dtype=tf.float32)
+
+    # Appliquer les transformations
     image = tf.image.random_flip_left_right(image)
     image = tf.image.random_brightness(image, max_delta=0.1)
+
     return image
